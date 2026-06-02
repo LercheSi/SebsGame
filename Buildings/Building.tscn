@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cc13d8emp7frf" path="res://Buildings/Building.cs" id="1_suwra"]
 [ext_resource type="Texture2D" uid="uid://bj7j6gdvl1jj" path="res://tileset/isotiles.png" id="2_wkr8q"]
+[ext_resource type="PackedScene" uid="uid://dixm4r6meea6a" path="res://Projectile/Projectile.tscn" id="3_uqave"]
 
 [sub_resource type="Gradient" id="662"]
 offsets = PackedFloat32Array(0.00558659, 0.441341, 0.659218)
@@ -20,6 +21,7 @@ region = Rect2(263, 224, 53, 112)
 
 [node name="Building" type="CharacterBody2D" unique_id=2115168255]
 script = ExtResource("1_suwra")
+PS_Projectile = ExtResource("3_uqave")
 
 [node name="Shadow" type="Sprite2D" parent="." unique_id=1990821401]
 modulate = Color(0.129412, 0.0745098, 0.192157, 0.647059)
@@ -35,3 +37,5 @@ texture = SubResource("AtlasTexture_jcfbf")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=840493753]
 position = Vector2(0, -10)
 shape = SubResource("CircleShape2D_wkr8q")
+
+[node name="Projectiles" type="Node2D" parent="." unique_id=2007879114]

@@ -9,6 +9,8 @@ public partial class Goblin : CharacterBody2D
     private Vector2 lastDirection = new Vector2(1, 0);
     private AnimatedSprite2D sprite;
     private TileMapLayer _tileMap;
+
+    private float Health = 100;
     private readonly Dictionary<string, (string name, bool flip)[]> animDirections = new()
     {
         {
@@ -45,6 +47,16 @@ public partial class Goblin : CharacterBody2D
         // Any initialization logic for the Goblin can go here
         _tileMap = tileMapLayer;
         //UpdateAnimation("idle");
+    }
+
+    public void TakeDamage(float damage)
+    {
+        Health -= damage;
+
+        if (Health <= 0)
+        {
+            QueueFree();
+        }
     }
     public override void _Ready()
     {

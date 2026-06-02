@@ -1,3 +1,40 @@
 [gd_scene format=3 uid="uid://dixm4r6meea6a"]
 
-[node name="Projectile" type="Node2D" unique_id=1536767268]
+[ext_resource type="Texture2D" uid="uid://dljf5eahi3ojh" path="res://Projectile/glow.png" id="1_eac16"]
+[ext_resource type="Script" uid="uid://boqedwdnxctwv" path="res://Projectile/Projectile.cs" id="1_ghnax"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghnax"]
+atlas = ExtResource("1_eac16")
+
+[sub_resource type="Gradient" id="Gradient_oq5eu"]
+offsets = PackedFloat32Array(0.28313252, 0.56626505)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_eac16"]
+gradient = SubResource("Gradient_oq5eu")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eac16"]
+radius = 19.31
+
+[node name="Projectile" type="CharacterBody2D" unique_id=1088455181]
+script = ExtResource("1_ghnax")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=81097629]
+texture = SubResource("AtlasTexture_ghnax")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1211390836]
+color = Color(1, 1, 0.03137255, 1)
+energy = 6.45
+range_item_cull_mask = 145
+texture = SubResource("GradientTexture2D_eac16")
+texture_scale = 0.55
+
+[node name="CollisionArea" type="Area2D" parent="." unique_id=275222370]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionArea" unique_id=1984222146]
+shape = SubResource("CircleShape2D_eac16")

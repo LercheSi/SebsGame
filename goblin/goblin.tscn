@@ -3,12 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://clxu2bgvw8xe" path="res://goblin/goblin.png" id="1"]
 [ext_resource type="Script" uid="uid://c36yv214paxe4" path="res://goblin/Goblin.cs" id="1_wtprw"]
 
-[sub_resource type="Gradient" id="662"]
+[sub_resource type="Gradient" id="Gradient_wtprw"]
 offsets = PackedFloat32Array(0.00558659, 0.441341, 0.659218)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="663"]
-gradient = SubResource("662")
+gradient = SubResource("Gradient_wtprw")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
@@ -1888,8 +1888,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="1"]
-radius = 7.0
-height = 14.0
+radius = 91.00008
+height = 182.00015
 
 [sub_resource type="OccluderPolygon2D" id="661"]
 polygon = PackedVector2Array(16.25, 18.75, 18.75, 36.25, 15, 38.75, 6.25, 42.5, -5, 42.5, -13.75, 41.25, -18.75, 37.5, -15, 20)
@@ -1911,6 +1911,8 @@ animation = &"front_idle"
 frame = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1393437622]
+z_index = 1
+y_sort_enabled = true
 position = Vector2(0, -7)
 rotation = 1.5708
 shape = SubResource("1")
