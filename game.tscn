@@ -1,0 +1,39 @@
+[gd_scene format=4 uid="uid://bbptt3dym71gs"]
+
+[ext_resource type="Script" uid="uid://c7fwl01hq2vsb" path="res://MeinRendering.cs" id="1_80nbo"]
+[ext_resource type="Script" uid="uid://db0nnyvvd25h" path="res://Camera.cs" id="2_e2o6t"]
+[ext_resource type="TileSet" uid="uid://rdmo3qcxjqg5" path="res://tileset/tileset.tres" id="3_7jktm"]
+[ext_resource type="Script" uid="uid://cxxybu0iok7kw" path="res://EnemySpawner.cs" id="4_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://ipxyktw0t1p0" path="res://goblin/goblin.tscn" id="5_7jktm"]
+[ext_resource type="Script" uid="uid://dfbg0ew8hs5rk" path="res://BuildingSpawner.cs" id="6_ryrav"]
+[ext_resource type="PackedScene" uid="uid://dxentr1jiwyb" path="res://Buildings/Building.tscn" id="7_eow3j"]
+
+[node name="game" type="Node2D" unique_id=1278227906]
+script = ExtResource("1_80nbo")
+
+[node name="MarkerEnemies" type="Marker2D" parent="." unique_id=362584316]
+position = Vector2(-945, -404)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=630456435]
+position = Vector2(-829, -324)
+script = ExtResource("2_e2o6t")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=319575392]
+tile_map_data = PackedByteArray("AAD+//z/AgAAAAAAAAD///z/AgAAAAAAAAD+//3/AgAAAAAAAAD///3/AgAAAAAAAAAAAPz/AgAAAAAAAAABAPn/AgAAAAAAAAABAPr/AgAAAAAAAAABAPv/AgAAAAAAAAABAPz/AgAAAAAAAAD+//7/AgAAAAAAAAD+////AgAAAAAAAAD9/wAAAgAAAAAAAAD+/wAAAgAAAAAAAAD8/wAAAgAAAAAAAAD7/wAAAgAAAAAAAAD7/wEAAgAAAAAAAAD7/wIAAgAAAAAAAAD3/wIAAgAAAAAAAAD4/wIAAgAAAAAAAAD5/wIAAgAAAAAAAAD6/wIAAgAAAAAAAAD3/wAAAgAAAAAAAAD4/wAAAgAAAAAAAAD5/wAAAgAAAAAAAAD5////AgAAAAAAAAD5//7/AgAAAAAAAAD6//7/AgAAAAAAAAD7//7/AgAAAAAAAAD8//3/AgAAAAAAAAD8//7/AgAAAAAAAAD8//z/AgAAAAAAAAD8//v/AgAAAAAAAAD8//r/AgAAAAAAAAD9//r/AgAAAAAAAAD+//r/AgAAAAAAAAD///r/AgAAAAAAAAD///j/AgAAAAAAAAD///n/AgAAAAAAAAABAPj/AgAAAAAAAAACAPj/AgAAAAAAAAACAPn/AgAAAAAAAAACAPr/AgAAAAAAAAACAPz/AgAAAAAAAAACAPv/AgAAAAAAAADz/wEAAQAAAAAAAADy/wEAAQAAAAAAAAD2/wIAAgAAAAAAAAD1/wIAAgAAAAAAAAD0/wIAAgAAAAAAAADz/wIAAgAAAAAAAADy/wIAAgAAAAAAAADx/wIAAgAAAAAAAADx/wEAAgAAAAAAAADx/wAAAgAAAAAAAADy/wAAAgAAAAAAAADz/wAAAgAAAAAAAAD0/wAAAgAAAAAAAAD1/wAAAgAAAAAAAAD2/wAAAgAAAAAAAAD0/wEAAQAAAAAAAAD1/wEAAQAAAAAAAAD2/wEAAQAAAAAAAAD3/wEAAQAAAAAAAAD4/wEAAQAAAAAAAAD5/wEAAQAAAAAAAAD6/wEAAQAAAAAAAAD6/wAAAQAAAAAAAAD6////AQAAAAAAAAD7////AQAAAAAAAAD8////AQAAAAAAAAD9////AQAAAAAAAAD9//7/AQAAAAAAAAD9//3/AQAAAAAAAAD9//z/AQAAAAAAAAD9//v/AQAAAAAAAAD+//v/AQAAAAAAAAD///v/AQAAAAAAAAAAAPv/AQAAAAAAAAAAAPr/AQAAAAAAAAAAAPn/AQAAAAAAAAAAAPj/AQAAAAAAAAA=")
+tile_set = ExtResource("3_7jktm")
+
+[node name="EnemySpawner" type="Node2D" parent="." unique_id=665986415]
+position = Vector2(-586, -269)
+script = ExtResource("4_fc0e3")
+goblin = ExtResource("5_7jktm")
+
+[node name="Enemies" type="Node2D" parent="." unique_id=1025277551]
+
+[node name="Buildings" type="Node2D" parent="." unique_id=2073571701]
+
+[node name="BuildingSpawner" type="Node2D" parent="." unique_id=235088301]
+script = ExtResource("6_ryrav")
+building = ExtResource("7_eow3j")
+
+[node name="BuildingMarker" type="Marker2D" parent="." unique_id=714042254]
+position = Vector2(-258, -237)

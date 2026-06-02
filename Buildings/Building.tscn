@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dxentr1jiwyb"]
+
+[ext_resource type="Script" uid="uid://cc13d8emp7frf" path="res://Buildings/Building.cs" id="1_suwra"]
+[ext_resource type="Texture2D" uid="uid://bj7j6gdvl1jj" path="res://tileset/isotiles.png" id="2_wkr8q"]
+
+[sub_resource type="Gradient" id="662"]
+offsets = PackedFloat32Array(0.00558659, 0.441341, 0.659218)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_uqave"]
+gradient = SubResource("662")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcfbf"]
+atlas = ExtResource("2_wkr8q")
+region = Rect2(263, 224, 53, 112)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wkr8q"]
+
+[node name="Building" type="CharacterBody2D" unique_id=2115168255]
+script = ExtResource("1_suwra")
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=1990821401]
+modulate = Color(0.129412, 0.0745098, 0.192157, 0.647059)
+position = Vector2(0, -0.406251)
+scale = Vector2(0.78125, 0.362305)
+texture = SubResource("GradientTexture2D_uqave")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=74866926]
+position = Vector2(0, -43)
+scale = Vector2(0.8, 0.8)
+texture = SubResource("AtlasTexture_jcfbf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=840493753]
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_wkr8q")
