@@ -27,9 +27,10 @@ public partial class BuildingSpawner : Node
 
     private void SpawnBuilding()
     {
-        Building build = building.Instantiate<Building>();
-		build.Initialize(_tileMap, _enemies);
-        build.Position = GetNode<Marker2D>("../BuildingMarker").Position;
+        Building build = building.Instantiate<ProtoTower>();
+        Vector2I marker_position = _tileMap.LocalToMap(GetNode<Marker2D>("../BuildingMarker").Position); // Example position, you can set this as needed
+		build.Place(_tileMap, marker_position, _enemies);
+        
 		 
         GetParent().GetNode<Node2D>("Buildings")
                    .AddChild(build);
